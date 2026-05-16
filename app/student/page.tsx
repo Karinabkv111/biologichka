@@ -83,7 +83,7 @@ export default function StudentDashboard() {
             <h2 className="text-lg font-semibold text-gray-800">Моё расписание</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="glass-card rounded-2xl p-4">
-                <Calendar onChange={setSelectedDate} value={selectedDate} tileClassName={({ date }) => { const d = date.toISOString().split('T')[0]; return lessons.some((l) => l.date === d) ? 'has-lesson' : '' }} />
+                <Calendar onChange={(date) => setSelectedDate(date as Date)} value={selectedDate} tileClassName={4({ date }) => { const d = date.toISOString().split('T')[0]; return lessons.some((l) => l.date === d) ? 'has-lesson' : '' }} />
               </div>
               <div className="glass-card rounded-2xl p-6">
                 <h3 className="font-medium text-gray-800 mb-4">Занятия на {selectedDate.toLocaleDateString('ru-RU')}</h3>

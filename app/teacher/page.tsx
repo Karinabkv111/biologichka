@@ -244,7 +244,7 @@ export default function TeacherDashboard() {
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="glass-card rounded-2xl p-4">
-                <Calendar onChange={setSelectedDate} value={selectedDate} tileClassName={({ date }) => { const d = date.toISOString().split('T')[0]; return lessons.some((l) => l.date === d) ? 'has-lesson' : '' }} />
+                <Calendar onChange={(date) => setSelectedDate(date as Date)} value={selectedDate} tileClassName={({ date }) => { const d = date.toISOString().split('T')[0]; return lessons.some((l) => l.date === d) ? 'has-lesson' : '' }} />
               </div>
               <div className="glass-card rounded-2xl p-6">
                 <h3 className="font-medium text-gray-800 mb-4">Занятия на {selectedDate.toLocaleDateString('ru-RU')}</h3>
@@ -491,7 +491,7 @@ function StudentTabs({ student, lessons, students, deleteLesson, materials, home
       <main className="max-w-5xl mx-auto p-6">
         {tab === '📅 Уроки' && (
           <div className="space-y-6"><h2 className="text-lg font-semibold text-gray-800">Уроки {student.name}</h2>
-            <div className="grid md:grid-cols-2 gap-6"><div className="glass-card rounded-2xl p-4"><Calendar onChange={setSelectedDate} value={selectedDate} tileClassName={({ date }) => { const d = date.toISOString().split('T')[0]; return lessons.some((l) => l.date === d) ? 'has-lesson' : '' }} /></div>
+            <div className="grid md:grid-cols-2 gap-6"><div className="glass-card rounded-2xl p-4"><Calendar onChange={(date) => setSelectedDate(date as Date)} value={selectedDate} tileClassName={({ date }) => { const d = date.toISOString().split('T')[0]; return lessons.some((l) => l.date === d) ? 'has-lesson' : '' }} /></div>
               <div className="glass-card rounded-2xl p-6"><h3 className="font-medium text-gray-800 mb-4">Занятия на {selectedDate.toLocaleDateString('ru-RU')}</h3>{lessonsOnDate.length === 0 ? <p className="text-gray-400 text-sm">Нет занятий</p> : lessonsOnDate.map((l) => (<div key={l.id} className="bg-blue-50 border border-indigo-200 rounded-xl p-4 mb-3"><div className="font-medium text-gray-800">{l.topic}</div><div className="text-sm text-gray-500 mb-2">{l.time}</div><div className="flex gap-2 flex-wrap"><button className="bg-blue-500 text-white px-4 py-2 rounded-xl text-sm font-medium">▶ Войти в класс</button>{l.materialLink && <a href={l.materialLink} target="_blank" className="bg-green-500 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-green-600 transition inline-block">📥 Материал</a>}</div></div>))}</div>
             </div>
           </div>
