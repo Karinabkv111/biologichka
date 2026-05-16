@@ -76,7 +76,7 @@ export default function CreateHomework() {
   ]
 
   // Текущая информация о задании
-  const taskInfo = egeTasks[taskNumber]
+  const taskInfo = egeTasks[taskNumber as keyof typeof egeTasks]
   const taskNumbers = exam === 'ЕГЭ' ? Array.from({length: 28}, (_, i) => i + 1) : Array.from({length: 26}, (_, i) => i + 1)
 
   const handleTaskNumberChange = (num) => {
