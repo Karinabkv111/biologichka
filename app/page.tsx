@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { supabase } from '../lib/supabase'
+import React, { useState } from 'react'
 
 export default function Home() {
   const [email, setEmail] = useState('')
@@ -13,7 +14,7 @@ export default function Home() {
   const [error, setError] = useState('')
   const router = useRouter()
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!agree) { alert('Нужно согласие на обработку данных'); return }
     setError('')
