@@ -42,7 +42,7 @@ const testData = {
 
 export default function TakeTest() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [answers, setAnswers] = useState({})
+  const [answers, setAnswers] = useState<Record<number, any>>({})
   const [submitted, setSubmitted] = useState(false)
   const [score, setScore] = useState(null)
 
@@ -75,7 +75,7 @@ export default function TakeTest() {
     let earnedPoints = 0
 
     testData.questions.forEach((q) => {
-      const userAnswer = answers[q.id]
+      const userAnswer = answers[q.id as number]
       let isCorrect = false
 
       if (q.type === 'options') {
