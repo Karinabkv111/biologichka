@@ -50,7 +50,7 @@ export default function TakeTest() {
   const totalQuestions = testData.questions.length
 
   // Сохранение ответа
-  const handleAnswer = (value) => {
+  const handleAnswer = (value: any) => {
     setAnswers({ ...answers, [q.id]: value })
   }
 
