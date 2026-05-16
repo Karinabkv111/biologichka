@@ -177,7 +177,7 @@ export default function TakeTest() {
           {/* Варианты ответа */}
           {q.type === 'options' && (
             <div className="space-y-3">
-              {q.options.map((opt, oi) => (
+              {(q.options || []).map((opt: any, oi: number) => (
                 <label
                   key={oi}
                   className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition ${
