@@ -44,7 +44,7 @@ export default function TakeTest() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<Record<number, any>>({})
   const [submitted, setSubmitted] = useState(false)
-  const [score, setScore] = useState(null)
+  const [score, setScore] = useState<any>(null)
 
   const q = testData.questions[currentQuestion]
   const totalQuestions = testData.questions.length
