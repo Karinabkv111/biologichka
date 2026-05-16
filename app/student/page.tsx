@@ -38,7 +38,7 @@ export default function StudentDashboard() {
     lastName: 'Иванов',
     birthDate: '2008-05-15',
     phone: '+7 (999) 123-45-67',
-    avatar: null,
+    avatar: '' as string | null,
   })
 
   const [showProfile, setShowProfile] = useState(false)

@@ -23,7 +23,7 @@ export default function TeacherDashboard() {
     lastName: 'Биолог',
     birthDate: '1995-03-20',
     phone: '+7 (999) 000-00-00',
-    avatar: null,
+    avatar: '' as string | null,
     about: 'Репетитор по биологии. Готовлю к ЕГЭ и ОГЭ. Опыт работы — 10 лет. Авторская методика подготовки.',
   })
 
